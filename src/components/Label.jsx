@@ -1,7 +1,14 @@
-export const Label = ({ text }) => {
-  return (
-    <p className="text-center text-xl uppercase text-yellow-600 text-shadow-200 tracking-wider">
-      {text}
-    </p>
-  );
+import { twMerge } from "tailwind-merge";
+
+export const Label = ({ text, className }) => {
+	return (
+		<p
+			className={twMerge(
+				"text-center text-base uppercase !text-yellow text-shadow-100 tracking-wider",
+				className
+			)}
+		>
+			{text}
+		</p>
+	);
 };
