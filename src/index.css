@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,600;6..12,800;6..12,900;6..12,1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Book.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "PoppinsLight";
+  src: url("/fonts/Poppins-Light.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply font-nunito text-primary;
+  }
+  h2 {
+    @apply font-nunito text-secondary;
+  }
+  h3 {
+    @apply font-poppinslight text-subtitle;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-gradient-100 {
+    @apply text-gradient;
+    background-image: linear-gradient(to bottom right, #06ff72, #000000 90%);
+  }
+  .text-gradient-200 {
+    @apply text-gradient;
+    background-image: linear-gradient(to bottom right, #1e1a1efd, #053e3e 90%);
+  }
+  .text-shadow-100 {
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  .text-shadow-200 {
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .flex-row {
+    @apply flex items-center align-middle justify-center flex-nowrap;
+  }
+  .flex-column {
+    @apply flex flex-col items-start justify-center;
+  }
+
+  .bg-gradient-100 {
+    background: linear-gradient(to top right, #01a137fd, rgb(135, 244, 195));
+  }
+
+  .mask-gradient {
+    background-image: linear-gradient(to top, #aef7c44c 0%, transparent 100%);
+  }
+
+  .p-section {
+    padding: max(5%, 3em) max(4%, 1em) max(5%, 2rem);
+  }
+
+  .truncate {
+    @apply w-full text-ellipsis whitespace-nowrap overflow-hidden;
+  }
+  .i-reset {
+    @apply border-none outline-none text-regular focus:outline-none bg-transparent text-ellipsis whitespace-nowrap transition-all overflow-hidden;
+  }
+}
+
+@layer components {
+  .grid-cols-main {
+    grid-template-columns: minmax(25%, 30%) 1fr minmax(min-content, 30%);
+  }
+  .grid-cols-two {
+    grid-template-columns: 1fr max-content;
+  }
+
+  .gi {
+    position: absolute;
+    background: radial-gradient(circle at center, red 0, rgba(0, 0, 0, 0) 40%)
+      no-repeat;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    top: calc(50% - 80% / 2);
+    /* left: calc(50% - 80% / 2); */
+    mix-blend-mode: hard-light;
+  }
+}
