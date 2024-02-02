@@ -33,7 +33,7 @@ function Home() {
 
 	return (
 		<div className="w-full relative">
-			<div className="relative min-h-[110vh] bg-img-hero">
+			<div className="relative min-h-[100vh] bg-img-hero">
 				<Header />
 				<Hero screenSize={screenSize} />
 				<div className="w-[70px] sm:w-[140px] absolute left-[0%] -bottom-[5%] select-none -z-10">
