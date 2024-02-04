@@ -2,12 +2,25 @@ import { RxDiscordLogo } from "react-icons/rx";
 import { PiInstagramLogoLight, PiTwitterLogoFill } from "react-icons/pi";
 import { TbBrandFacebookFilled } from "react-icons/tb";
 
-export const navLink = [
+export const navLinks = [
 	{
-		link: "Solutions",
-		id: "solutions",
+		name: "Home",
+		href: "home",
+	},
+	{
+		name: "Token Info",
+		href: "tokeninfo",
+	},
+	{
+		name: "Cat info",
+		href: "about",
+	},
+	{
+		name: "Little puff merch",
+		href: "https://mikesonsmith88.wixsite.com/infinite_wealth",
 	},
 ];
+
 export const socialLinks = [
 	{
 		icon: <TbBrandFacebookFilled className="text-amber-600 text-lg" />,

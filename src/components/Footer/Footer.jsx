@@ -2,7 +2,7 @@ import { faqLinks, footerLinks } from "@constants/constant";
 import { socialLinks } from "@constants/navLinks";
 import betbinary from "@assets/images/betbinarylogo.png";
 
-const SocialLinks = ({ icon, href, title }) => (
+export const SocialLinks = ({ icon, href, title }) => (
 	<a
 		href={href}
 		aria-label={title}

@@ -119,6 +119,25 @@ export const footerLinks = [
 	},
 ];
 
+export const footerLinksAlt = [
+	{
+		link: "Solutions",
+		id: "Market",
+	},
+	{
+		link: "Solutions",
+		id: "How it works",
+	},
+	{
+		link: "Solutions",
+		id: "BinDApp",
+	},
+	{
+		link: "Solutions",
+		id: "Whitepaper",
+	},
+];
+
 export const tokenDetails = [
 	"Max Supply : 100,000,000 $BIN",
 	"*No tokens were airdropped or allocated to the team. 100% of the supply is in circulation.",
