@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Header from "@components/Headers/Header";
 import Hero from "@components/Hero";
 import Footer from "@components/Footer/Footer";
@@ -38,7 +37,16 @@ function Home() {
 					<Market />
 				</div>
 				<Features />
-				<div className=" px-3 min-w-[320px] max-w-[400px] relative mt-4 mb-4 sm:hidden mx-auto">
+				{/* <div data-aos="fade-up" data-aos-anchor-placement="top-center"></div> */}
+				{/* <div data-aos="flip-left" data-aos-delay="100" data-aos-anchor=".example-selector"></div> */}
+				<div
+					data-aos="fade-zoom-in"
+					data-aos-offset="100"
+					data-aos-easing="ease-in-sine"
+					data-aos-duration="600"
+					// data-aos-once="true"
+					className="px-3 min-w-[320px] max-w-[400px] relative mt-4 mb-4 sm:hidden mx-auto"
+				>
 					<img src={features} alt="" />
 				</div>
 				<Token />

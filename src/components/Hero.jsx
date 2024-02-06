@@ -46,7 +46,7 @@ function Hero() {
 					</a>
 				</motion.div>
 
-				<RevealAnimate delay={2.4}>
+				<RevealAnimate delay={2.8}>
 					<span className="capitalize my-4 text-sm block text-center tracking-wide">
 						BinBot Coming soon
 					</span>

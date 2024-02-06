@@ -11,9 +11,16 @@ import BetPosition from "./pages/BetPosition";
 import Payment from "./pages/payment/Payment";
 import ScrollToTop from "@components/ScrollToTop";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function App() {
 	const dispatch = useDispatch();
 	const { hasAnimated } = useSelector((store) => store.appState);
+
+	useEffect(() => {
+		AOS.init();
+	}, []);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
