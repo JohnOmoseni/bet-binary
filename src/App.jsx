@@ -9,6 +9,7 @@ import Leaderboard from "./pages/leaderboard/Leaderboard";
 import Analytics from "./pages/analytics/Analytics";
 import BetPosition from "./pages/BetPosition";
 import Payment from "./pages/payment/Payment";
+import ScrollToTop from "@components/ScrollToTop";
 
 function App() {
 	const dispatch = useDispatch();
@@ -36,6 +37,8 @@ function App() {
 
 	return (
 		<div className="wrapper ">
+			<ScrollToTop />
+
 			<Routes>
 				<Route path="/" element={<Navigate to="/home" />} />
 				<Route path="/home" element={<Home />} />

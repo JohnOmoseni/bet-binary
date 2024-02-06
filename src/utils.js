@@ -1,16 +1,44 @@
 export const container = {
-	hidden: { opacity: 0 },
+	hidden: { opacity: 0, x: "100vw" },
 	animate: {
 		opacity: 1,
+		x: 0,
 		transition: {
-			staggerChildren: 0.6,
+			delay: 1.6,
+			duration: 0.8,
+			type: "spring",
+			mass: 0.3,
+			ease: "easeIn",
 			when: "beforeChildren",
+			delayChildren: 0.2,
+			staggerChildren: 0.4,
+		},
+	},
+	exit: {
+		x: "100vw",
+		opacity: 0,
+		transition: {
+			duration: 1,
+			ease: "easeOut",
+		},
+	},
+};
+
+export const variant = {
+	hidden: { opacity: 0, y: 20 },
+	animate: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.8,
+			type: "spring",
+			delay: 1.8,
 		},
 	},
 };
 
 export const listAnimate = {
-	hidden: { opacity: 0, y: 100 },
+	hidden: { opacity: 0, y: 60 },
 	animate: (custom) => ({
 		opacity: 1,
 		y: 0,
