@@ -1,28 +1,29 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import AppStateReducer from "./features/appStateSlice";
-import DashboardStateReducer from "./features/dashboardStateSlice";
-import ChatbotStateReducer from "./features/chatbotSlice";
+import AppStateReducer from "./features/appSlice";
 import UserSlice from "./features/userSlice";
 
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
-  key: "persist-key",
-  version: 1,
-  storage,
+	key: "root",
+	version: 1,
+	storage,
 };
-const reducer = combineReducers({
-  userState: UserSlice,
-  appState: AppStateReducer,
-  dashboardState: DashboardStateReducer,
-  chatbotState: ChatbotStateReducer,
+
+const rootReducer = combineReducers({
+	appState: AppStateReducer,
+	userState: UserSlice,
 });
 
-const persistedReducer = persistReducer(persistConfig, reducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: persistedReducer,
+	reducer: persistedReducer,
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({
+			serializableCheck: false,
+		}),
 });
 
 export const persistor = persistStore(store);

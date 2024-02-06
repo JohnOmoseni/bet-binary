@@ -14,7 +14,7 @@ function FooterVariant() {
           <img src={betbinary} alt="" />
         </div>
 
-        <ul className="flex-row gap-10 text-sm">
+        <ul className="flex-row gap-5 sm:gap-10 text-sm mx-3">
           {footerLinksAlt.map((item, idx) => (
             <a
               href={item.link}
@@ -23,7 +23,7 @@ function FooterVariant() {
               target="_blank"
               rel="noreferrer"
               key={idx}
-              className="text-shadow-100 block transition-sm hover:text-yellow hover:scale-95"
+              className="text-shadow-100 leading-4 block transition-sm whitespace-nowrap hover:text-yellow hover:scale-95"
             >
               {item?.id}
             </a>

@@ -1,6 +1,4 @@
-import Card from "@components/Card";
 import { Label } from "@components/Label";
-import { features } from "@constants/constant";
 import SwiperDiv from "./SwiperDiv";
 
 const Direction = ({ icon, dir }) => (

@@ -1,36 +1,32 @@
-import { useLocation } from "react-router-dom";
-import { Link } from "react-scroll";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { navAnimate } from "@utils";
+import { useSelector } from "react-redux";
 
 const LinkRow = ({ href, name, onClick, idx }) => {
-	const link = `relative w-max flex-row py-1.5 px-2 uppercase !text-[0.76rem] whitespace-nowrap rounded-full transition-sm hover:scale-105 hover:text-shadow-100`;
-	const activeLink = `${link} bg-[#D9FFE8] rounded-md shadow-md`;
+	const { hasAnimated } = useSelector((store) => store.appState);
+
+	const link = `relative w-max flex-row py-1.5 px-2 uppercase !text-[0.76rem] whitespace-nowrap rounded-full transition-sm transition-colors hover:text-yellow hover:scale-105 hover:text-shadow-100`;
+	const activeLink = `${link} text-yellow tracking-wide`;
 
 	const location = useLocation();
 	const { pathname } = location;
 
 	return (
 		<motion.div
-			variants={navAnimate}
+			variants={hasAnimated ? null : navAnimate}
 			initial="hidden"
 			whileInView="animate"
 			viewport={{ once: true, amount: 0.2 }}
 			custom={idx}
 		>
-			<Link
+			<NavLink
 				to={href}
-				// className={({ isActive }) => (isActive ? activeLink : link)}
-				className={`${link}`}
+				className={({ isActive }) => (isActive ? activeLink : link)}
 				onClick={onClick}
-				activeClass="active"
-				spy={true}
-				smooth={true}
-				offset={href.includes("roadmap") ? 200 : -2}
-				duration={400}
 			>
 				{name}
-			</Link>
+			</NavLink>
 		</motion.div>
 	);
 };

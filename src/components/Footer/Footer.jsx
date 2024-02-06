@@ -1,6 +1,7 @@
 import { faqLinks, footerLinks } from "@constants/constant";
 import { socialLinks } from "@constants/navLinks";
 import betbinary from "@assets/images/betbinarylogo.png";
+import { Link } from "react-router-dom";
 
 export const SocialLinks = ({ icon, href, title }) => (
 	<a
@@ -17,9 +18,9 @@ export const SocialLinks = ({ icon, href, title }) => (
 function Footer() {
 	return (
 		<div className="w-full py-[1em] px-[1em] flex-column sm:grid grid-cols-2 gap-6 text-neutral-400">
-			<div className="w-full sm:w-[90%] flex-row gap-6 !justify-between max-sm:pr-6 sm:pl-6 mt-5">
+			<div className="w-full sm:w-[90%] flex-row gap-6 !justify-between max-sm:pr-6 sm:pl-6">
 				<div>
-					<p className="mb-1 text-white">Links</p>
+					<p className="text-white mt-[1.7rem]">Links</p>
 					<ul className="flex-column mt-3">
 						{footerLinks.map((item, idx) => (
 							<a
@@ -38,22 +39,32 @@ function Footer() {
 				<div>
 					<p className="mb-1 text-white">FAQ</p>
 					<ul className="flex-column mt-3">
-						{faqLinks.map((item, idx) => (
-							<a
-								href=""
-								aria-label=""
-								target="_blank"
-								rel="noreferrer"
-								key={idx}
-								className="text-shadow-100 block mb-1.5 transition-colors hover:text-amber-600"
-							>
-								{item?.id}
-							</a>
-						))}
+						{faqLinks.map((item, idx) =>
+							item?.id.includes("dApp") ? (
+								<Link
+									to={item.link}
+									key={item.id}
+									className="text-shadow-100 block mb-1.5 transition-colors hover:text-amber-600"
+								>
+									{item?.id}
+								</Link>
+							) : (
+								<a
+									href={item?.link}
+									aria-label=""
+									target="_blank"
+									rel="noreferrer"
+									key={idx}
+									className="text-shadow-100 block mb-1.5 transition-colors hover:text-amber-600"
+								>
+									{item?.id}
+								</a>
+							)
+						)}
 					</ul>
 				</div>
 			</div>
-			<div className="flex-column !items-start gap-4 text-sm">
+			<div className="flex-column !items-start gap-4 text-sm sm:mt-5 sm:h-full">
 				<div className="w-[140px] relative left-[-1em]">
 					<img src={betbinary} alt="" />
 				</div>

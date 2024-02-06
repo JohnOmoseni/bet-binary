@@ -5,35 +5,39 @@ import { TbBrandFacebookFilled } from "react-icons/tb";
 export const navLinks = [
 	{
 		name: "Home",
-		href: "home",
+		href: "/dapp",
 	},
 	{
-		name: "Token Info",
-		href: "tokeninfo",
+		name: "Leaderboard",
+		href: "/standings",
 	},
 	{
-		name: "Cat info",
-		href: "about",
+		name: "Analytics",
+		href: "/analytics",
 	},
 	{
-		name: "Little puff merch",
-		href: "https://mikesonsmith88.wixsite.com/infinite_wealth",
+		name: "Position",
+		href: "/position",
+	},
+	{
+		name: "Funding",
+		href: "/funding",
 	},
 ];
 
 export const socialLinks = [
 	{
-		icon: <TbBrandFacebookFilled className="text-amber-600 text-lg" />,
+		icon: <TbBrandFacebookFilled className="text-amber-600 text-[1rem]" />,
 		title: "Facebook",
 		href: "https://web.facebook.com/groups/1789015331551141/?_rdc=1&_rdr",
 	},
 	{
-		icon: <PiInstagramLogoLight className="text-amber-600 text-lg" />,
+		icon: <PiInstagramLogoLight className="text-amber-600 text-[1rem]" />,
 		title: "Instagram",
 		href: "https://www.instagram.com/extinction_001/",
 	},
 	{
-		icon: <PiTwitterLogoFill className="text-amber-600 text-lg" />,
+		icon: <PiTwitterLogoFill className="text-amber-600 text-[1rem]" />,
 		title: "Twitter",
 		href: "https://twitter.com/Infinitewealt",
 	},

@@ -4,6 +4,15 @@ import Cryptocurrency from "@icons/cryptocurrency.svg";
 import Sports from "@icons/sports.svg";
 import Politics from "@icons/politics.svg";
 
+export const tabs = [
+	"All",
+	"Price action",
+	"Market cap",
+	"Sports",
+	"News & Politics",
+	"Events",
+];
+
 export const markets = [
 	{
 		icon: Stock,
@@ -79,7 +88,7 @@ export const faqLinks = [
 		id: "Uniswap",
 	},
 	{
-		link: "Solutions",
+		link: "/dapp",
 		id: "dApp",
 	},
 ];
