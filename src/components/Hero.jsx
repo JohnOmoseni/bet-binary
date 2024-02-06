@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import heroLogo from "@assets/images/herologo.png";
 import heromobile from "@assets/images/heromobile.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function Hero({ screenSize }) {
+function Hero() {
+	const { screenSize } = useSelector((store) => store.appState);
+
 	return (
 		<motion.div
 			id="home"

@@ -19,7 +19,7 @@ function Home() {
 		<div className="w-full relative isolate">
 			<div className="relative min-h-[100vh] bg-img-hero">
 				<Header />
-				<Hero screenSize={screenSize} />
+				<Hero />
 				<div className="w-[70px] sm:w-[140px] absolute left-[0%] -bottom-[5%] select-none -z-10">
 					<img src={coin5} alt="" />
 				</div>
